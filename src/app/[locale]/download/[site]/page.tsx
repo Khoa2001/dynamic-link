@@ -3,7 +3,7 @@
 import { getAllSites } from "@/services/GetAllSitesService";
 import { Site } from "@/types/Site";
 import { hashSha256WithSalt } from "@/util/Util";
-import { redirect, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import { useTranslations } from "use-intl";
 
