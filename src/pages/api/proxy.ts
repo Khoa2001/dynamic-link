@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { targetUrl } = req.query
@@ -23,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await axios(axiosConfig)
 
     res.status(response.status).json(response.data)
-  } catch (error: AxiosError | any) {
+  } catch (error: any) {
     const status = error.response?.status || 500
     const message = error.response?.data || error.message || 'Unknown error'
 
