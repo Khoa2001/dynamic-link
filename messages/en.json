@@ -1,3 +1,6 @@
 {
-    "redirecting": "Redirecting..."
+  "redirect": {
+    "title": "Hang Tight!",
+    "description": "You're being redirected to another page."
+  }
 }

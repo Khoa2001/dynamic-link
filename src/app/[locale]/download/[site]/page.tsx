@@ -70,10 +70,23 @@ export default function DownloadPage() {
     resolve()
   })
 
-  const t = useTranslations()
+  const t = useTranslations('redirect');
+
   return (
-    <>
-      {t('redirecting')}
-    </>
+    <main
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/background.png')" }}>
+      <div className="max-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-white rounded-xl">
+        <div className="bg-white shadow-md rounded-xl w-full max-w-sm text-center">
+          <div className="p-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">{t('title')}</h2>
+            <p className="text-sm text-gray-600 whitespace-pre-line">
+              {t('description')}
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </main>
   );
 }

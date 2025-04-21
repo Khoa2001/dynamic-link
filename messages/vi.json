@@ -1,3 +1,6 @@
 {
-    "redirecting": "Đang chuyển tiếp..."
+  "redirect": {
+    "title": "Vui lòng chờ!",
+    "description": "Bạn đang được chuyển hướng đến trang khác."
+  }
 }
