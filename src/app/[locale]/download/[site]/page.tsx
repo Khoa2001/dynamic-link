@@ -22,13 +22,18 @@ export default function DownloadPage() {
       const isAndroid = userAgent.indexOf("android") > -1;
       const isIOS = /iphone|ipad|ipod/.test(userAgent);
     
-      const schemeUrl = `intent://${site.bundle_id}/${site.site_id}/#Intent;scheme=${site.scheme_id};package=${site.bundle_id};end;`;
+      const iosSchemeUrl = `${site.scheme_id}://mobile.dotb.cloud/download/${site.site_id}`;
+      const androidIntentUrl = `intent://mobile.dotb.cloud/download/${site.site_id}/#Intent;scheme=${site.scheme_id};package=${site.bundle_id};end;`;
       const iosAppStoreUrl = `https://apps.apple.com/app/id${site.appstore_id}`;
       const androidPlayStoreUrl = `https://play.google.com/store/apps/details?id=${site.bundle_id}`;
-    
+
       const now = Date.now();
-    
-      window.location.href = schemeUrl;
+
+      if (isIOS) {
+        window.location.href = iosSchemeUrl;
+      } else {
+        window.location.href = androidIntentUrl;
+      }
     
       setTimeout(() => {
         if (Date.now() - now < 2000) {
